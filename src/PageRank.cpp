@@ -91,10 +91,8 @@ void PageRank::make_child_map() {
 		auto& curent_vector = adjacency_matrix[i];
 		assert(num_nodes == curent_vector.size());
 		for (int j = 0; j < curent_vector.size(); ++j) {
-			if (i != j) {
-				if (curent_vector[j]) {
-					child_map[i].push_back(j); // construct the graph
-				}
+			if (curent_vector[j]) {
+				child_map[i].push_back(j); // construct the graph
 			}
 		}
 	}
